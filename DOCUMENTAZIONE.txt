@@ -1,0 +1,83 @@
+DOCUMENTAZIONE PROGETTO - FANTATENNIS
+
+Componenti:
+- Omar Mansour
+- Ayoub
+- Houssein
+
+1. ANALISI
+Il progetto simula una piattaforma Fantatennis. Il programma permette:
+- gestione tennisti da parte dell'amministratore;
+- gestione tornei e match;
+- registrazione Fanta-Coach;
+- creazione e modifica squadre;
+- calcolo classifiche e report.
+
+2. STRUTTURE DATI
+Sono state usate struct semplici:
+- Tennista: id, nome, cognome, ranking, crediti, disponibile.
+- Torneo: id, nome, winnerId.
+- Match: id torneo, tennisti, set, ace, doppi falli, break, vincitore.
+- Coach: nickname.
+- Squadra: nickname coach, torneo, 6 tennisti, crediti, punti.
+
+3. FILE
+Il progetto usa file binari:
+- tennisti.dat per i tennisti;
+- tornei.dat per i tornei;
+- matches.dat per i match;
+- coach.dat per i coach;
+- squadre.dat per le squadre.
+
+4. PROGETTAZIONE
+Il programma e diviso in moduli:
+- main.c: menu principale;
+- tennista.c/h: gestione tennisti;
+- tornei.c/h: gestione tornei e match;
+- coach.c/h: registrazione coach;
+- squadra.c/h: creazione e modifica squadre;
+- ranking.c/h: classifiche, punteggi e report;
+- files.c/h: funzioni sui file dei tennisti;
+- utils.c/h: funzioni di supporto.
+
+5. FUNZIONALITA IMPLEMENTATE
+- Aggiunta, modifica, cancellazione e visualizzazione tennisti.
+- Ricerca tennisti per ID, nome/cognome anche con sottostringa, costo e stato.
+- Aggiunta, modifica, cancellazione e visualizzazione tornei.
+- Aggiunta match.
+- Registrazione coach con nickname unico.
+- Creazione squadra di 6 tennisti diversi e disponibili.
+- Controllo budget massimo 100 crediti.
+- Una sola squadra per coach per torneo.
+- Blocco creazione/modifica squadra se il torneo ha gia match.
+- Calcolo punti tennisti: vittoria, vittoria 2-0, ace, break, sconfitta e doppi falli.
+- Calcolo punti squadra con bonus se contiene il vincitore del torneo.
+- Classifica torneo.
+- Classifica generale coach.
+- Report tennisti ordinati per punteggio.
+
+6. COMPILAZIONE
+Usare il comando:
+gcc main.c coach.c files.c ranking.c squadra.c tennista.c tornei.c utils.c -o tennista
+
+7. ESECUZIONE
+Usare il comando:
+./tennista
+
+8. NOTE
+Il codice usa solo concetti base visti a laboratorio: struct, array, cicli, if/switch, funzioni e file binari.
+
+=== AGGIORNAMENTO FUNZIONALITA' RICHIESTE ===
+Sono state aggiunte alcune funzioni richieste dalla traccia usando solo argomenti studiati nel corso:
+- menu del Fanta-Coach con visualizzazione tornei;
+- menu del Fanta-Coach con ricerca tennista;
+- controllo dell'esistenza del torneo prima della creazione o modifica di una squadra;
+- file Doxyfile per generare la documentazione con Doxygen.
+
+Le modifiche usano soltanto funzioni, struct, file binari, if/switch, cicli e programmazione modulare.
+
+AGGIORNAMENTO REGOLE TRACCIA
+- La ricerca tennista e la visualizzazione tornei sono disponibili anche nel menu Fanta-Coach.
+- Prima di creare o modificare una squadra viene controllato che il torneo esista.
+- Se sono stati inseriti match, la funzione di modifica tennista non cambia ranking e stato, rispettando la regola che questi dati non si modificano durante un torneo.
+- Il file Doxyfile permette di generare la documentazione con il comando: doxygen Doxyfile.

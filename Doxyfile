@@ -1,0 +1,9 @@
+# File semplice per generare la documentazione con Doxygen
+PROJECT_NAME = "Fantatennis"
+OUTPUT_DIRECTORY = doc
+INPUT = .
+RECURSIVE = NO
+EXTRACT_ALL = YES
+GENERATE_HTML = YES
+GENERATE_LATEX = NO
+QUIET = YES

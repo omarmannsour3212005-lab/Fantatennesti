@@ -1,0 +1,9 @@
+Per generare la documentazione con Doxygen:
+
+1) Aprire il terminale nella cartella del progetto.
+2) Eseguire il comando:
+
+   doxygen Doxyfile
+
+3) Verrà creata la cartella doc/html.
+4) Aprire il file doc/html/index.html per vedere la documentazione.
